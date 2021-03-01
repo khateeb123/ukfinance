@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class StudentFeeType extends Model
 {
     use HasFactory;
+    protected $guarded =[];
 
-    public function feeses()
+    public function ftudentFees()
     {
-        return $this->hasMany(StudenstFee::class);
+        return $this->hasMany(StudenstFee::Class);
     }
 }

@@ -17,8 +17,9 @@ class CreateStudentFeesTable extends Migration
             $table->id();
             $table->foreignId('student_id');
             $table->foreignId('student_fee_type_id');
-            $table->string('amount');
-            $table->string('status');
+            $table->decimal('amount');
+            $table->string('status')->default('unpaid');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -15,8 +15,8 @@ class CreateStudentClassesTable extends Migration
     {
         Schema::create('student_classes', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('type');
+            $table->foreignId('Class_type_id');
+            $table->integer('number');
             $table->softDeletes();
             $table->timestamps();
         });

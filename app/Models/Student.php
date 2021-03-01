@@ -9,13 +9,15 @@ class Student extends Model
 {
     use HasFactory;
 
-    public function class()
+    protected $guarded =[];
+
+    public function studentClass()
     {
-        return $this->belongsTo(StudentClass::class);
+        return $this->belongsTo(StudentClass::Class);
     }
 
-    public function feeses()
+    public function studentFees()
     {
-        return $this->hasMany(StudentFee::class);
+        return $this->hasMany(StudentFee::Class);
     }
 }

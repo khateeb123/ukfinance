@@ -16,11 +16,11 @@ class CreateTeachersTable extends Migration
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email')->nullable();
             $table->string('contact');
-            $table->string('education');
+            $table->string('education')->nullable();
             $table->string('salary');
-            $table->string('status');
+            $table->boolean('status')->default(true);
             $table->softDeletes();
             $table->timestamps();
         });

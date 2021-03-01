@@ -17,7 +17,7 @@ class CreateSalariesTable extends Migration
             $table->id();
             $table->foreignId('teacher_id');
             $table->string('amount');
-            $table->string('status');
+            $table->string('status')->default(false);
             $table->softDeletes();
             $table->timestamps();
         });

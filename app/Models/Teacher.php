@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Teacher extends Model
 {
     use HasFactory;
+    protected $guarded =[];
 
     public function salary()
     {
-        return $this->hasOne(Salary::class);
+        return $this->hasOne(Salary::Class);
     }
 }

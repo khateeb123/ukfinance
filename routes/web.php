@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
+Route::get('/',[AdminController::class, 'index'])->name('welcome');
+Route::get('/dashboard',[AdminController::class, 'dashboard'])->middleware('auth')->name('dashboard');
+Route::get('/collect',[AdminController::class, 'show'])->middleware('auth')->name('collect');
+Route::post('/collect/search',[AdminController::class, 'find'])->middleware('auth')->name('collect.search');
+Route::get('/registration',[AdminController::class, 'registration'])->middleware('auth')->name('registration');
+Route::post('/registration/store',[AdminController::class, 'registrationStore'])->middleware('auth')->name('registration.store');
+Route::post('/payfee/{studentFee}',[AdminController::class, 'payFee'])->middleware('auth')->name('pay.fee');
+Route::get('/collect/studentfee/{student}',[AdminController::class, 'studentFee'])->middleware('auth')->name('student.fee');
+Route::get('/unpaid',[AdminController::class, 'unpaidFees'])->middleware('auth')->name('unpaid.fee.list');
+Route::get('/classtypes',[AdminController::class, 'viewClassTypes'])->middleware('auth')->name('view.class.types');
+//registration view.class
 require __DIR__.'/auth.php';

@@ -8,14 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class StudentFee extends Model
 {
     use HasFactory;
+    protected $guarded =[];
 
     public function student()
     {
-        return $this->belongsTo(Student::class);
+        return $this->belongsTo(Student::Class);
     }
 
-    public function feeType()
+    public function studentFeeType()
     {
-        return $this->belongsTo(StudentFeeType::class);
+        return $this->belongsTo(StudentFeeType::Class);
     }
 }
