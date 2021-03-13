@@ -24,5 +24,6 @@ Route::post('/payfee/{studentFee}',[AdminController::class, 'payFee'])->middlewa
 Route::get('/collect/studentfee/{student}',[AdminController::class, 'studentFee'])->middleware('auth')->name('student.fee');
 Route::get('/unpaid',[AdminController::class, 'unpaidFees'])->middleware('auth')->name('unpaid.fee.list');
 Route::get('/classtypes',[AdminController::class, 'viewClassTypes'])->middleware('auth')->name('view.class.types');
-//registration view.class
+Route::get('/classtypes/classes/{classType}',[AdminController::class, 'viewClasses'])->middleware('auth')->name('view.classes');
+//registration view.classes
 require __DIR__.'/auth.php';

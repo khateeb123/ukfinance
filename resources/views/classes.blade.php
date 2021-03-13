@@ -5,11 +5,9 @@
 	<h1>welcome to classes</h1>
 <div class="row">
 
-@foreach($classTypes as $classType)
-<a href="">
-<button class="btn btn-outline-dark  btn-lg m-4" style="width: 200px">{{$classType->name}}</button>
-</a>
+@foreach($classType as $class)
 
+{{$class}}
 @endforeach
 
 </div>

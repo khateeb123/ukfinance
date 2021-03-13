@@ -118,8 +118,22 @@ class AdminController extends Controller
 
    $classTypes = ClassType::all();
 
-        return view('classes',compact('classTypes'));
+        return view('classtypes',compact('classTypes'));
     }
+
+    /**viewClasses
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Expenses  $expenses
+     * @return \Illuminate\Http\Response
+     */
+ public function viewClasses(ClassType $classType){
+
+
+
+        return view('classes',compact('classType'));
+    }
+
 
     /**viewClasses
      * Display the specified resource.
